@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Application Form</title>
+    <link rel="stylesheet" href="vendors/style.css">
+    <script src="vendors/angular.min.js" charset="utf-8"></script>
+    <script src="scripts/client.js" charset="utf-8"></script>
+    <!-- <link rel="stylesheet" href="/vendors/normalize.css">
+    <link rel="stylesheet" href="/vendors/skeleton.css"> -->
+    </head>
+  <body>
+    <main ng-app="angApp" ng-controller="AngController as angCtrl">
+      <h1>Application Form</h1>
+      <form>
+        <label for="emp">First Name</label>
+        <input type="text" ng-model="angCtrl.emp.firstName" />
+        <label for="emp">Last Name</label>
+        <input type="text" ng-model="angCtrl.emp.lastName" />
+        <label for="emp">ID Number</label>
+        <input type="text" ng-model="angCtrl.emp.id" />
+        <label for="emp">Job Title</label>
+        <input type="text" ng-model="angCtrl.emp.title"/>
+        <label for="emp">Annual Salary</label>
+        <input type="text" ng-model="angCtrl.emp.salary"/>
+        <input type="submit" ng-click="angCtrl.addEmployee(angCtrl.emp.firstName, angCtrl.emp.lastName, angCtrl.emp.id, angCtrl.emp.title, angCtrl.emp.salary )" value="Submit" />
+        <input type="button" value="Delete" />
+      </form>
+
+      <p>
+        Adding emp: {{ angCtrl.emp }}
+      </p>
+
+      <div id="employees">
+        <h2><u>Employee List</u></h2>
+        <ul>
+          <li ng-repeat="emp in angCtrl.employees">{{ emp }}<button ng-click="angCtrl.delEmployee($index)">x</button></li>
+        </ul>
+      </div>
+      <div id="expenditures">
+        <h2><u>Monthly Salary Expenditures</u></h2>
+        <p ng-repeat="c in angCtrl.monthlyExpenditures"> ${{ c }} </p>
+      </div>
+
+      </div>
+    </main>
+  </body>
+</html>

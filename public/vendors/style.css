@@ -1,0 +1,34 @@
+body {
+  background-color: #059489;
+}
+
+h1 {
+  text-align: center;
+  font-family: Copperplate, "Copperplate Gothic Light";
+}
+
+h2 {
+  font-family: monaco;
+}
+
+form {
+  width: 100%;
+}
+
+label {
+  font-family: Futura;
+  display: inline-block;
+  width: 33%;
+  height: 2em;
+}
+
+#employees {
+  width: 100%;
+}
+
+p {
+  font-family: Tahoma;
+  color: #fffef7;
+  display: inline-block;
+  width: 20%;
+}
